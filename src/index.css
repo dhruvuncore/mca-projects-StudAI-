@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   Base Theme Variables & Transitions
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-subtle: #f1f5f9;
+  --border-subtle: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg-primary: #090d16;
+  --bg-surface: #0f172a;
+  --bg-surface-subtle: #1e293b;
+  --border-subtle: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+}
+
+html, body {
+  min-height: 100%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html.dark body {
+  background-color: #090d16;
+  color: #f8fafc;
+}
+
+/* ==========================================================================
+   Dark Mode Component & Utility Overrides
+   ========================================================================== */
+
+/* Surfaces and Cards */
+html.dark .bg-white {
+  background-color: #0f172a !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-50\/80,
+html.dark .bg-slate-50\/90,
+html.dark .bg-\[\#F8FAFC\],
+html.dark .bg-\[\#F8FAFC\]\/50 {
+  background-color: #090d16 !important;
+}
+
+html.dark .bg-slate-100,
+html.dark .bg-\[\#F1F5F9\] {
+  background-color: #1e293b !important;
+}
+
+html.dark .bg-slate-200 {
+  background-color: #334155 !important;
+}
+
+/* Soft accent surfaces */
+html.dark .bg-blue-50,
+html.dark .bg-blue-50\/60,
+html.dark .bg-blue-50\/70,
+html.dark .bg-\[\#ECF2FF\] {
+  background-color: rgba(37, 99, 235, 0.16) !important;
+}
+
+html.dark .bg-indigo-50 {
+  background-color: rgba(99, 102, 241, 0.16) !important;
+}
+
+html.dark .bg-emerald-50,
+html.dark .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.16) !important;
+}
+
+html.dark .bg-amber-50,
+html.dark .bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.16) !important;
+}
+
+html.dark .bg-rose-50,
+html.dark .bg-rose-50\/20,
+html.dark .bg-rose-500\/10 {
+  background-color: rgba(244, 63, 94, 0.16) !important;
+}
+
+/* Borders */
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-200\/90,
+html.dark .border-slate-300,
+html.dark .border-\[\#CBD5E1\],
+html.dark .border-\[\#E2E8F0\],
+html.dark .border-\[\#E2E8F0\]\/60,
+html.dark .border-\[\#F1F5F9\] {
+  border-color: #1e293b !important;
+}
+
+html.dark .divide-\[\#E2E8F0\] > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #1e293b !important;
+}
+
+html.dark .border-blue-200,
+html.dark .border-blue-200\/90 {
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+html.dark .border-emerald-200 {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+html.dark .border-amber-200 {
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Typography */
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-\[\#0F172A\] {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-700,
+html.dark .text-\[\#334155\] {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-\[\#64748B\] {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-slate-400 {
+  color: #64748b !important;
+}
+
+html.dark .text-\[\#1E3A8A\],
+html.dark .text-blue-950,
+html.dark .text-blue-900 {
+  color: #93c5fd !important;
+}
+
+html.dark .text-blue-800,
+html.dark .text-blue-700 {
+  color: #60a5fa !important;
+}
+
+html.dark .text-emerald-950,
+html.dark .text-emerald-900,
+html.dark .text-emerald-700 {
+  color: #6ee7b7 !important;
+}
+
+/* Form Controls */
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark textarea,
+html.dark select {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25) !important;
+  outline: none !important;
+}
+
+html.dark select option {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+/* Hover States */
+html.dark .hover\:bg-slate-50:hover,
+html.dark .hover\:bg-slate-100:hover,
+html.dark .hover\:bg-slate-200:hover,
+html.dark .hover\:bg-\[\#F1F5F9\]:hover,
+html.dark .hover\:bg-\[\#F8FAFC\]:hover {
+  background-color: #1e293b !important;
+}
+
+html.dark .hover\:text-\[\#0F172A\]:hover,
+html.dark .hover\:text-slate-900:hover {
+  color: #ffffff !important;
+}
+
+html.dark .hover\:border-\[\#2563EB\]:hover {
+  border-color: #3b82f6 !important;
+}
+
+/* Shadows in Dark Mode */
+html.dark .shadow-xs,
+html.dark .shadow-sm {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark .shadow-md,
+html.dark .shadow-lg,
+html.dark .shadow-xl {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Modal Backdrops & Dialogs */
+html.dark .bg-black\/50,
+html.dark .bg-slate-900\/50,
+html.dark .bg-slate-900\/60,
+html.dark .bg-slate-900\/80 {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Recharts grid lines */
+html.dark .recharts-cartesian-grid-horizontal line,
+html.dark .recharts-cartesian-grid-vertical line {
+  stroke: #1e293b !important;
+}
+
+html.dark .recharts-text {
+  fill: #94a3b8 !important;
+}
+
+/* Markdown and Pre blocks */
+html.dark pre {
+  background-color: #090d16 !important;
+  border-color: #1e293b !important;
+  color: #93c5fd !important;
+}
+
+html.dark code {
+  color: #93c5fd !important;
+}
+
+/* Custom Scrollbars */
+html.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #090d16;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
